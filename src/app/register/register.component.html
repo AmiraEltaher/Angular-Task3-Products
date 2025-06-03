@@ -1,1 +1,29 @@
-<p>register works!</p>
+<!-- register.component.html -->
+<h2>Register</h2>
+
+<form (ngSubmit)="onRegister()">
+  <input
+    type="text"
+    name="name"
+    [(ngModel)]="user.name"
+    required
+    placeholder="Name"
+  />
+  <input
+    type="email"
+    name="email"
+    [(ngModel)]="user.email"
+    required
+    placeholder="Email"
+  />
+  <input
+    type="password"
+    name="password"
+    [(ngModel)]="user.password"
+    required
+    placeholder="Password"
+  />
+  <button type="submit">Register</button>
+</form>
+
+<p *ngIf="successMessage">{{ successMessage }}</p>
